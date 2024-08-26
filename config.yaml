@@ -1,9 +1,9 @@
 settings:
-  title: 'Status Page'
-  url: 'https://status-page.eidam.dev' # used for Slack messages
-  logo: logo-192x192.png # image in ./public/ folder
-  daysInHistogram: 90 # number of days you want to display in histogram
-  collectResponseTimes: true # collects avg response times from CRON locations
+  title: 'ColdSword Status Page'
+  url: 'https://status.coldsword.link'
+  logo: logo-192x192.png
+  daysInHistogram: 90
+  collectResponseTimes: true
 
   allmonitorsOperational: 'All Systems Operational'
   notAllmonitorsOperational: 'Not All Systems Operational'
@@ -12,28 +12,93 @@ settings:
   monitorLabelNoData: 'No data'
   dayInHistogramNoData: 'No data'
   dayInHistogramOperational: 'All good'
-  dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
+  dayInHistogramNotOperational: ' incident(s)'
 
 monitors:
-  - id: workers-cloudflare-com # unique identifier
-    name: workers.cloudflare.com
-    description: 'You write code. They handle the rest.' # default=empty
-    url: 'https://workers.cloudflare.com/' # URL to fetch
-    method: GET # default=GET
-    expectStatus: 200 # operational status, default=200
-    followRedirect: false # should fetch follow redirects, default=false
-    linkable: false # allows the title to be a link, default=true
-
-  - id: www-cloudflare-com
-    name: www.cloudflare.com
-    description: 'Built for anything connected to the Internet.'
-    url: 'https://www.cloudflare.com'
+  - id: coldsword-link
+    name: ColdSword Main Site
+    description: 'Main website of ColdSword'
+    url: 'https://coldsword.link'
     method: GET
     expectStatus: 200
-    linkable: true # allows the title to be a link, default=true
+    linkable: true
 
-  - id: blog-cloudflare-com
-    name: The Cloudflare Blog
-    url: 'https://blog.cloudflare.com/'
+  - id: lobechat-coldsword-link
+    name: LobeChatBot
+    description: 'LobeChatBot service'
+    url: 'https://lobechat.coldsword.link'
     method: GET
     expectStatus: 200
+    linkable: true
+
+  - id: lobechat-preview-coldsword-link
+    name: LobeChatBot Preview
+    description: 'Preview version of LobeChatBot'
+    url: 'https://lobechat-preview.coldsword.link'
+    method: GET
+    expectStatus: 200
+    linkable: true
+
+  - id: chatnio-coldsword-link
+    name: ChatNio
+    description: 'ChatNio service'
+    url: 'https://chatnio.coldsword.link'
+    method: GET
+    expectStatus: 200
+    linkable: true
+
+  - id: chatnio-stable-coldsword-link
+    name: ChatNio Stable
+    description: 'Stable version of ChatNio'
+    url: 'https://chatnio-stable.coldsword.link'
+    method: GET
+    expectStatus: 200
+    linkable: true
+
+  - id: me-coldsword-link
+    name: Personal Page
+    description: 'Personal information page'
+    url: 'https://me.coldsword.link'
+    method: GET
+    expectStatus: 200
+    linkable: true
+
+  - id: status-coldsword-link
+    name: Status Page
+    description: 'Status monitoring page'
+    url: 'https://status.coldsword.link'
+    method: GET
+    expectStatus: 200
+    linkable: true
+
+  - id: searxng-coldsword-link
+    name: SearXNG
+    description: 'SearXNG search engine instance'
+    url: 'https://searxng.coldsword.link'
+    method: GET
+    expectStatus: 200
+    linkable: true
+
+  - id: blob-coldsword-link
+    name: Blob Service
+    description: 'Blob storage service'
+    url: 'https://blob.coldsword.link'
+    method: GET
+    expectStatus: 200
+    linkable: true
+
+  - id: clerk-coldsword-link
+    name: Clerk Service
+    description: 'Clerk authentication service'
+    url: 'https://clerk.coldsword.link'
+    method: GET
+    expectStatus: 200
+    linkable: true
+
+  - id: coldsword-serv00-net
+    name: ColdSword Serv00
+    description: 'ColdSword service on serv00.net'
+    url: 'https://coldsword.serv00.net'
+    method: GET
+    expectStatus: 200
+    linkable: true
